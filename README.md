@@ -1,1 +1,1 @@
-# LeungEnterprises.github.io
+Future home of the Leung Enterprises blog
