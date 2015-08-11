@@ -3,6 +3,7 @@ layout: post
 title: First post!
 author: Nathan Leung
 comments: true
+tags: [html]
 ---
 Hey guys!  Jekyll is really cool!
 

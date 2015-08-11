@@ -37,9 +37,17 @@ body {
   }
 }
 a.sidebar-nav-item {
+  &-icon .fa {
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 90px;
+    &:hover {
+      color: #aaa;
+    }
+  }
   & > span {
     display: inline-block;
-    &::after {
+    &:not(.fa)::after {
       content: '';
       display: block;
       width: 0%;
@@ -53,7 +61,7 @@ a.sidebar-nav-item {
   &:focus {
     text-decoration: none;
     font-weight: normal;
-    & > span::after {
+    &:not(.fa) > span::after {
       width: 100%;
     }
   }
