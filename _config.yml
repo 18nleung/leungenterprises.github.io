@@ -7,14 +7,14 @@ permalink:           /article/:year/:month/:day/:title/
 relative_permalinks: false
 
 # Setup
-title:            Nathan Leung
-tagline:          'Blog'
+title:            'Leung Enterprises Blog'
+tagline:          'Javascript, HTML5, CSS3'
 description:      'Lead Web Developer <a href="https://twitter.com/LeungEnterprise">@LeungEnterprise</a>'
 baseurl:          /
 
 author:
-  name:           'Nathan Leung'
-  url:            http://leung.enterprises/
+  name:           'Leung Enterprises'
+  url:            http://www.leungenterprises.com/
 
 paginate:         5
 

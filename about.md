@@ -1,15 +1,14 @@
 ---
 layout: page
 title: About
+permalink: about/
 ---
-> I have no fear, only ambition!<br>
-> &ndash; Tupac Shakur
+> We are such stuff as dreams are made on.<br>
+> &ndash; William Shakespeare
 
-I'm Nathan, lead web designer and developer at [Leung Enterprises](http://leung.enterprises/).
+We are [Leung Enterprises](https://www.leungenterprises.com/).
 
-I enjoy making cool things using JavaScript and Node.js.  Visit my [GitHub profile](http://github.com/18nleung) to see a few things that I've made.
-
-Some of my relevant skills include ExpressJS, MongoDB, and Jade.
+Leung Enterprises is a web design and development firm based in the Greater Philadelphia Area.
 
 ## Contact
-Feel free to email me at [nathan@leung.enterprises](mailto:nathan@leung.enterprise).  Alternatively, you can send a tweet to [@LeungEnterprise](http://twitter.com/LeungEnterprise).
+Feel free to contact us at [hello@leungenterprises.com](mailto:hello@leungenterprises.com).  Alternatively, you can send a tweet to [@LeungEnterprise](http://twitter.com/LeungEnterprise).
