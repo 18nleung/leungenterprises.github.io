@@ -11,7 +11,7 @@
       </li>
 
       <li {% if current[1] == 'about' %} class="active" {% endif %}>
-        <a href="{{ site.baseurl }}about">About</a>
+        <a href="{{ site.baseurl }}about">About the Blog</a>
       </li>
     </ul>
     <ul class="header-nav pull-right">
@@ -41,49 +41,24 @@
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li>
-          <a href="https://www.leungenterprises.com/">Home</a>
+        <li {% if current[1] == 'index.html' %} class='active' {% endif %}>
+          <a href="http://blog.leungenterprises.com/">Blog Home</a>
+        </li>
+
+        <li {% if current[1] == 'about' %} class='active' {% endif %}>
+          <a href="http://blog.leungenterprises.com/">About the Blog</a>
         </li>
 
         <li>
-          <a href="https://www.leungenterprises.com/about">About</a>
-        </li>
-
-        <li>
-          <a href="https://www.leungenterprises.com/portfolio">Portfolio</a>
-        </li>
-
-        <li>
-          <a href="https://www.leungenterprises.com/services">Services</a>
-        </li>
-
-        <li>
-          <a href="https://www.leungenterprises.com/contact">Contact</a>
-        </li>
-
-        <li class="active">
-          <a href="http://blog.leungenterprises.com/">Blog <i class=
+          <a href="https://www.leungenterprises.com/">Main Home <i class=
           "ion-forward"></i></a>
         </li>
 
-        <li>
-          <a class="fa fa-facebook" href=
-          "https://facebook.com/LeungEnterprises"></a>
-        </li>
-
-        <li>
+        <li class="social-block">
+          <a class="fa fa-facebook" href="https://facebook.com/LeungEnterprises"></a>
           <a class="fa fa-twitter" href="https://twitter.com/LeungEnterprise"></a>
-        </li>
-
-        <li>
           <a class="fa fa-google-plus" href="https://plus.google.com/+LeungEnterprises"></a>
-        </li>
-
-        <li>
           <a class="fa fa-linkedin" href="https://www.linkedin.com/company/leung-enterprises"></a>
-        </li>
-
-        <li>
           <a class="fa fa-github" href="https://github.com/LeungEnterprises"></a>
         </li>
       </ul>

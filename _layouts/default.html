@@ -15,6 +15,11 @@
         <h1>{{ page.title }}</h1>
         <h2>{{ page.description }}</h2>
       </div>
+      {% if page.date %}
+        <p class="post-date pull-right">
+          {{ page.date | date_to_string }}
+        </p>
+      {% endif %}
     </div>
     <div class="container content-container">
       <div class="col-xs-12">

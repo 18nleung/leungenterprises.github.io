@@ -13,6 +13,8 @@ description:      'Lead Web Developer <a href="https://twitter.com/LeungEnterpri
 baseurl:          /
 url:              https://blog.leungenterprises.com
 
+excerpt_separator: "<!-- excerpt -->"
+
 author:
   name:           'Leung Enterprises'
   url:            http://www.leungenterprises.com/
