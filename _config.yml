@@ -11,6 +11,7 @@ title:            'Leung Enterprises Blog'
 tagline:          'Javascript, HTML5, CSS3'
 description:      'Lead Web Developer <a href="https://twitter.com/LeungEnterprise">@LeungEnterprise</a>'
 baseurl:          /
+url:              https://blog.leungenterprises.com
 
 author:
   name:           'Leung Enterprises'
@@ -18,9 +19,14 @@ author:
 
 paginate:         5
 
+sass:
+  style:          compressed
+
+gems:
+  - jekyll-sitemap
+
 # Custom vars
 version:          1.1.0
-
 
 github:           https://github.com/18nleung
 linkedin:         https://linkedin.com/in/18nleung

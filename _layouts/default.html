@@ -4,15 +4,49 @@
   {% include head.html %}
 
   <body>
-
+    <!-- The blog is fast enough that the preloader isn't necessary
+      <div id="loader-overlay" class="flex-center">
+        <div id="loader"></div>
+      </div>
+    -->
     {% include header.html %}
-
-    <div class="container blog">
-      {{ content }}
+    <div class="jumbotron title-header trianglify">
+      <div class="container text-center">
+        <h1>{{ page.title }}</h1>
+        <h2>{{ page.description }}</h2>
+      </div>
+    </div>
+    <div class="container content-container">
+      <div class="col-xs-12">
+        {{ content }}
+      </div>
     </div>
 
     {% include footer.html %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+      // Preloader - the blog is fast enough that the preloader isn't necessary
+      /*
+      $(window).load(function() {
+        $('#loader').fadeOut();
+        $('#loader-overlay').delay(100).fadeOut('slow');
+        $('body').delay(100).css({'overflow':'visible'});
+      });
+      */
+    </script>
+    <script src="https://www.leungenterprises.com/js/trianglify-0.3.1.min.js"></script>
+    <script>function genTriangles(){var n=window.innerHeight,i=window.innerWidth,t=function(n,i){return"hsl(0,0%,"+Math.floor(Math.abs(n*i*100))+"%)"},e=Trianglify({height:2*n,width:i,cell_size:100,color_function:t}),o=e.png(),r=[".trianglify"],a=r.map(function(n){return n+"::after"}),l="<style>"+a.toString()+" {content: '';display: block;z-index: -1;position: absolute;top: 0;bottom: 0;left: 0;right: 0;opacity: 0.6;background: url("+o+");}</style>";$("head").append(l)}genTriangles(),$(window).resize(function(){genTriangles()});</script>
+    <script src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/862a1e48e883576451a5e490e3872cbf30935890/dest/jekyll-search.js"></script>
+    <script>
+      /* Set up Jekyll search */
+      SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        searchResultTemplate: '<li><a title="{description}" href="https://blog.leungenterprises.com{url}">{title}<span class="pull-right text-muted small">{date}</span></a></li>',
+        noResultsText: '<li><a class="no-results">No results found</a></li>',
+        json: '/search.json'
+      });
+    </script>
   </body>
 </html>

@@ -13,6 +13,11 @@
       {{ page.title }} | {{ site.title }}
     {% endif %}
   </title>
+  {% if page.metadesc %}
+    <meta name="description" content="{{page.metadesc}}">
+  {% elsif page.description %}
+    <meta name="description" content="{{page.description}}">
+  {% endif %}
 
   <!-- CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -25,6 +30,23 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}public/apple-touch-icon-144-precomposed.png">
                                  <link rel="shortcut icon" href="{{ site.baseurl }}public/favicon-256.png">
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ site.url }}">
+
+  <!-- Header background -->
+  <style>
+    .title-header::before {
+      {% if page.header.background %}
+        background-image: url('{{ page.header.background }}');
+      {% else %}
+        background-image: url('https://www.leungenterprises.com/img/galaxy.jpg');
+      {% endif %}
+    }
+    .title-header h1,
+    .title-header p {
+      {% if page.header.color %}
+        color: {{ page.header.color }};
+      {% endif %}
+    }
+  </style>
 </head>

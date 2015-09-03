@@ -2,6 +2,9 @@
 layout: page
 title: About
 permalink: about/
+description: A little bit about us
+header:
+  background: https://www.leungenterprises.com/img/ccenter.jpg
 ---
 > We are such stuff as dreams are made on.<br>
 > &ndash; William Shakespeare

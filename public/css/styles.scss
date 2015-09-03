@@ -1,0 +1,491 @@
+---
+---
+
+// Utility
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Elements
+
+.jumbotron {
+  margin-bottom: 0;
+}
+
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  transition: all 0.3s;
+
+  &:focus {
+    box-shadow: none;
+    border: none;
+    outline: none;
+  }
+}
+
+.btn {
+  border-radius: 0;
+}
+
+// Scaffolding
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans';
+  // overflow: hidden; // for preloader, will change in js
+}
+
+// The blog is fast enough that the preloader isn't necessary.
+/*
+#loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #eee;
+  z-index: 99;
+}
+
+#loader {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+
+  margin: 100px auto;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  } 50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  } 100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+*/
+
+header.mobile {
+  display: block;
+  transition: all 0.3s;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  ul.nav.navbar-nav > li > a {
+   text-transform: uppercase;
+   text-align: center;
+   letter-spacing: 0.12rem;
+  }
+
+  .navbar-brand {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .navbar-toggle {
+    border: 0;
+    border-radius: 0;
+
+    &:hover, &:focus, &:active {
+      background: transparent;
+    }
+  }
+}
+
+header.desktop {
+  display: none;
+  background: #222;
+  margin-bottom: 0;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  .header-nav {
+    float: left;
+    list-style-type: none;
+    margin-bottom: 0;
+
+    & > li {
+      display: inline-block;
+      height: 100%;
+
+      &.active > a {
+        color: white;
+      }
+
+      & > a {
+        transition: all 0.3s;
+        font-size: 14px;
+        height: 75px;
+        line-height: 75px;
+        position: relative;
+        top: -6px;
+        text-transform: uppercase;
+        font-variant: small-caps;
+        display: inline-block;
+        margin: 0px 30px;
+        letter-spacing: 2px;
+        color: #ccc;
+        vertical-align: middle;
+        font-weight: 300;
+        transition: all 0.3s;
+
+        @media (max-width: 991px) {
+          margin: 0px 15px;
+        }
+
+        &:hover, &:focus, &:active {
+          color: white;
+          text-decoration: none;
+        }
+
+        &.brand-open {
+          display: block;
+          font-size: 44px;
+          position: relative;
+          top: 5px;
+        }
+      }
+
+      &.search > #search-container {
+        position: relative;
+        top: 25px;
+        right: 40px;
+        margin-left: 48px;
+        width: 300px;
+
+        .input-group-addon {
+          background: transparent;
+          border: 0;
+          border-radius: 0;
+          border-bottom: 1px solid #888;
+
+          i {
+            color: #888;
+          }
+        }
+
+        .form-control {
+          background: transparent;
+          border-bottom: 1px solid #888;
+          color: #eee;
+          letter-spacing: 0.03rem;
+        }
+
+        #results-container {
+          position: absolute;
+          left: 45px;
+          width: 255px;
+          z-index: 9999; // Make sure it's always on top, posts cover sometimes
+          background: #fff;
+          box-shadow: 0px 0px 3px #aaa;
+          list-style-type: none;
+          padding-left: 0;
+
+          & > li {
+            width: 100%;
+            & > a {
+              display: block;
+              width: 100%;
+              padding: 8px 16px;
+              color: #333;
+              border-bottom: 1px solid #eee;
+
+              &:not(.no-results):hover {
+                  background: #f4f4f4;
+                  color: #000;
+                  text-decoration: none;
+              }
+
+              &.no-results {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.title-header {
+  background: transparent;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    /*
+    animation-name: pan;
+    animation-iteration-count: infinite;
+    animation-duration: 120s;
+    */
+  }
+
+  @keyframes pan {
+    0%, 100% {
+      background-position:top left
+    }
+    50% {
+      background-position:bottom right
+    }
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  h1, h2, p {
+    color: #eee;
+    font-weight: 300;
+  }
+}
+
+.content-container {
+  padding: 50px 0px;
+
+  a {
+    color: #333;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.related-posts {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    background: #f8f8f8;
+    margin-top: 20px;
+    padding: 25px;
+    padding-top: 30px;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    a:hover {
+      color: black;
+    }
+  }
+}
+
+footer.jumbotron {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0;
+  background: #222;
+  color: #eee;
+}
+footer.jumbotron a {
+  color: #eee;
+}
+footer.jumbotron a:hover {
+  text-decoration: none;
+}
+footer.jumbotron .row.darker-bg {
+  margin-top: 0px;
+  background: #222;
+}
+footer.jumbotron .classy {
+  animation: rainbowText;
+  animation: rainbowText 5s infinite;
+  animation-timing-function: linear;
+}
+.logo {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.logo .leung,
+.logo .enterprises {
+  display: block;
+}
+.logo .leung {
+  position: relative;
+  top: 8px;
+  font-size: 48px;
+}
+.logo .enterprises {
+  font-size: 25px;
+}
+@media (min-width: 768px) {
+  .logo .leung {
+    top: 17px;
+    font-size: 96px;
+  }
+  .logo .enterprises {
+    font-size: 50px;
+  }
+}
+.nav-bottom {
+  padding: 30px;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+.nav-bottom > li > a {
+  color: #aaa;
+  transition: all 0.3s;
+}
+.nav-bottom > li > a:hover,
+.nav-bottom > li > a:focus,
+.nav-bottom > li > a:active {
+  background: transparent;
+  color: #fff;
+}
+.background-pan {
+  background-size: cover !important;
+  background-position: top left;
+  animation: pan 60s infinite !important;
+  animation-timing-function: linear !important;
+}
+.background-before-pan::before {
+  background-size: cover !important;
+  background-position: top left;
+  animation: pan 60s infinite !important;
+  animation-timing-function: linear !important;
+}
+.background-before-pan-30::before {
+  background-size: cover !important;
+  background-position: top left;
+  animation: pan 30s infinite !important;
+  animation-timing-function: linear !important;
+}
+@-moz-keyframes pan {
+  0%, 100% {
+    background-position: top left;
+  }
+  50% {
+    background-position: bottom right;
+  }
+}
+@-webkit-keyframes pan {
+  0%, 100% {
+    background-position: top left;
+  }
+  50% {
+    background-position: bottom right;
+  }
+}
+@-o-keyframes pan {
+  0%, 100% {
+    background-position: top left;
+  }
+  50% {
+    background-position: bottom right;
+  }
+}
+@keyframes pan {
+  0%, 100% {
+    background-position: top left;
+  }
+  50% {
+    background-position: bottom right;
+  }
+}
+@-moz-keyframes rainbowText {
+  0%, 100% {
+    color: #fa8072;
+  }
+  17% {
+    color: #ffa500;
+  }
+  33% {
+    color: #ff0;
+  }
+  50% {
+    color: #0f0;
+  }
+  67% {
+    color: #add8e6;
+  }
+  83% {
+    color: #f0f;
+  }
+}
+@-webkit-keyframes rainbowText {
+  0%, 100% {
+    color: #fa8072;
+  }
+  17% {
+    color: #ffa500;
+  }
+  33% {
+    color: #ff0;
+  }
+  50% {
+    color: #0f0;
+  }
+  67% {
+    color: #add8e6;
+  }
+  83% {
+    color: #f0f;
+  }
+}
+@-o-keyframes rainbowText {
+  0%, 100% {
+    color: #fa8072;
+  }
+  17% {
+    color: #ffa500;
+  }
+  33% {
+    color: #ff0;
+  }
+  50% {
+    color: #0f0;
+  }
+  67% {
+    color: #add8e6;
+  }
+  83% {
+    color: #f0f;
+  }
+}
+@keyframes rainbowText {
+  0%, 100% {
+    color: #fa8072;
+  }
+  17% {
+    color: #ffa500;
+  }
+  33% {
+    color: #ff0;
+  }
+  50% {
+    color: #0f0;
+  }
+  67% {
+    color: #add8e6;
+  }
+  83% {
+    color: #f0f;
+  }
+}

@@ -1,16 +1,28 @@
-<header class="desktop open">
+{% assign current = page.url | downcase | split: '/' %}
+<header class="desktop">
   <div class="container-fluid">
     <ul class="header-nav">
       <li class="text-center">
         <a class="brand-open" href="{{ site.baseurl }}">LE</a>
       </li>
 
-      <li>
+      <li {% if current[1] == 'index.html' %} class='active' {% endif %}>
         <a href="{{ site.baseurl }}">Blog Home</a>
       </li>
 
-      <li>
+      <li {% if current[1] == 'about' %} class="active" {% endif %}>
         <a href="{{ site.baseurl }}about">About</a>
+      </li>
+    </ul>
+    <ul class="header-nav pull-right">
+      <li class="search">
+        <div id="search-container">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" id="search-input" placeholder="SEARCH">
+          </div>
+          <ul id="results-container"></ul>
+        </div>
       </li>
     </ul>
   </div>
