@@ -38,6 +38,11 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="{{ site.url }}">
+  <script>
+    if (window.location.hostname !== "blog.leungenterprises.com") {
+      window.location.replace("https://blog.leungenterprises.com");
+    }
+  </script>
 
   <!-- RSS -->
   <link rel='alternate' type='application/rss+xml' title='RSS' href='/atom.xml'>
