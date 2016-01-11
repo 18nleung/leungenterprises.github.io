@@ -40,9 +40,9 @@
       });
       */
     </script>
-    <script src="/js/trianglify-0.4.0.min.js"></script>
+    <script src="/public/js/trianglify-0.4.0.min.js"></script>
     <script>function genTriangles(){var n=window.innerHeight,i=window.innerWidth,t=function(n,i){return"hsl(0,0%,"+Math.floor(Math.abs(n*i*100))+"%)"},e=Trianglify({height:2*n,width:i,cell_size:100,color_function:t}),o=e.png(),r=[".trianglify"],a=r.map(function(n){return n+"::after"}),l="<style>"+a.toString()+" {content: '';display: block;z-index: -1;position: absolute;top: 0;bottom: 0;left: 0;right: 0;opacity: 0.6;background: url("+o+");}</style>";$("head").append(l)}genTriangles(),$(window).resize(function(){genTriangles()});</script>
-    <script src="/js/jekyll-search.js"></script>
+    <script src="/public/js/jekyll-search.js"></script>
     <script>
       /* Set up Jekyll search */
       SimpleJekyllSearch({
